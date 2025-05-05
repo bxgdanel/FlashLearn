@@ -10,3 +10,15 @@ D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\bin\Debug\FlashLearn
 D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\bin\Debug\FlashLearnfr.exe.config
 D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Login.resources
 D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\obj\x86\Debug\FlashLearnfr.csprojResolveAssemblyReference.cache
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\FlashLearnfr.exe.config
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.exe
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.pdb
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\FlashLearnfr.exe
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\FlashLearnfr.pdb
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.csprojResolveAssemblyReference.cache
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Form1.resources
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Login.resources
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Properties.Resources.resources
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.csproj.GenerateResource.Cache
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\FlashLearnDB.mdf
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\FlashLearnDB_log.ldf

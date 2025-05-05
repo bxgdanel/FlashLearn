@@ -40,7 +40,7 @@ namespace FlashLearnfr
                     textBox3.Visible = false;
                     label4.ForeColor = Color.Green;
                     label4.Text = "Succes";
-                    utilizatoriTableAdapter.InsertQuery(idm + 1, textBox1.Text.ToString(), textBox2.Text.ToString());
+                    utilizatoriTableAdapter.InsertQuery(textBox1.Text.ToString(), textBox2.Text.ToString());
                 }
                 else
                 {
