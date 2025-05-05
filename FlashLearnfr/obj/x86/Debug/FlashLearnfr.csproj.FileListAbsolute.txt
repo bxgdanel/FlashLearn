@@ -8,3 +8,5 @@ D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\obj\x86\Debug\FlashL
 D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\bin\Debug\FlashLearnDB.mdf
 D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\bin\Debug\FlashLearnDB_log.ldf
 D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\bin\Debug\FlashLearnfr.exe.config
+D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Login.resources
+D:\users\Luca Bogdan\aplicatii c#\FlashLearnfr\FlashLearnfr\obj\x86\Debug\FlashLearnfr.csprojResolveAssemblyReference.cache
