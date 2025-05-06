@@ -15,8 +15,9 @@ namespace FlashLearnfr
         Random r = new Random();
         List<int> v = new List<int>();
         List<float> p = new List<float>();
+        List<int> ids = new List<int>();
         Random_Ponderat WRandom;
-        int CQid,CUid;
+        int CQid,CUid=-1;
         private void NDist(int n) {
             List<float> brut = new List<float>();
             for (int i = 0; i < n; i++)
@@ -48,11 +49,11 @@ namespace FlashLearnfr
            
             if (this.intrebariTableAdapter.FillU(this.flashLearnDBDataSet.Intrebari, CUid) != 0)
             {
+                button2.Visible = true;
                 RInit();
                 int lvl = -1;
                 while (lvl == -1)
                 {
-                    System.Console.WriteLine("inebuynesc");
                     lvl = WRandom.getValue();
                 }
                 this.intrebariTableAdapter.FillBySLvl(this.flashLearnDBDataSet.Intrebari, lvl, CUid);
@@ -64,6 +65,7 @@ namespace FlashLearnfr
                     label2.Text = qu.Rows[idx]["Raspuns"].ToString();
                     string idq = qu.Rows[idx]["id"].ToString();
                     CQid = int.Parse(idq);
+                    this.intrebariTableAdapter.Aparitii(CQid);
                 }
                 else RInit();
             }
@@ -99,7 +101,8 @@ namespace FlashLearnfr
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.intrebariTableAdapter.UpdateLvl(2, CQid);
+            this.intrebariTableAdapter.UpdateLvl(3, CQid);
+            this.intrebariTableAdapter.MediuCnt(CQid);
             selectQ();
             tabControl1.SelectedIndex = 2;
         }
@@ -111,7 +114,8 @@ namespace FlashLearnfr
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.intrebariTableAdapter.UpdateLvl(1, CQid);
+            this.intrebariTableAdapter.UpdateLvl(5, CQid);
+            this.intrebariTableAdapter.UsorCnt(CQid);
             selectQ();
             tabControl1.SelectedIndex = 2;
         }
@@ -119,12 +123,14 @@ namespace FlashLearnfr
         private void button5_Click(object sender, EventArgs e)
         {
             this.intrebariTableAdapter.UpdateLvl(1, CQid);
+            this.intrebariTableAdapter.GreuCnt(CQid);
             selectQ();
             tabControl1.SelectedIndex = 2;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            this.utilizatoriTableAdapter.Fill(this.flashLearnDBDataSet.Utilizatori);
             DataTable user = flashLearnDBDataSet.Utilizatori;
             utilizatoriTableAdapter.CheckUser(flashLearnDBDataSet.Utilizatori, textBox1.Text.ToString());
             System.Console.WriteLine(CUid);
@@ -157,26 +163,34 @@ namespace FlashLearnfr
             }
             else
             {
-                if (user.Rows.Count == 0)
+                if (textBox1.Text != "")
                 {
-                    if (textBox2.Text == textBox3.Text)
+                    if (user.Rows.Count == 0)
                     {
-                        label3.Visible = false;
-                        textBox3.Visible = false;
-                        label4.ForeColor = Color.Green;
-                        label4.Text = "Succes";
-                        utilizatoriTableAdapter.InsertQuery(textBox1.Text.ToString(), textBox2.Text.ToString());
+                        if (textBox2.Text == textBox3.Text)
+                        {
+                            label3.Visible = false;
+                            textBox3.Visible = false;
+                            label4.ForeColor = Color.Green;
+                            label4.Text = "Succes";
+                            utilizatoriTableAdapter.InsertQuery(textBox1.Text.ToString(), textBox2.Text.ToString());
+                        }
+                        else
+                        {
+                            label4.ForeColor = Color.Red;
+                            label4.Text = "Parolele nu coincid";
+                        }
                     }
                     else
                     {
                         label4.ForeColor = Color.Red;
-                        label4.Text = "Parolele nu coincid";
+                        label4.Text = "Username existent";
                     }
                 }
                 else
                 {
                     label4.ForeColor = Color.Red;
-                    label4.Text = "Username existent";
+                    label4.Text = "Username-ul nu poate fi null";
                 }
             }
             }
@@ -185,6 +199,92 @@ namespace FlashLearnfr
         {
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string Intrebare, Raspuns;
+            int lvl=1;
+            Intrebare = textBox4.Text.ToString();
+            Raspuns = textBox5.Text.ToString();
+            List<RadioButton> levels = new List<RadioButton>();
+            levels.Add(radioButton1);
+            levels.Add(radioButton2);
+            levels.Add(radioButton3);
+            levels.Add(radioButton4);
+            levels.Add(radioButton5);
+            for (int i = 0; i < levels.Count; i++)
+                if (levels[i].Checked)
+                    lvl = 5-i+1;
+            if (Raspuns != "" && Intrebare != "")
+            {
+                label15.ForeColor = Color.Green;
+                label15.Text = "Succes!";
+                this.intrebariTableAdapter.InsertQ(Intrebare, Raspuns, lvl, CUid);
+            }
+            else
+            {
+                label15.ForeColor = Color.Red;
+                label15.Text = "Datele nu sunt complete";
+            }
         }
+
+        private void acasaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CUid != -1)
+                tabControl1.SelectedIndex = 1;
         }
+
+        private void creazaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CUid != -1)
+                tabControl1.SelectedIndex = 4;
+        }
+
+        private void statisticiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ids.Clear();
+            comboBox1.Items.Clear();
+            if (CUid != -1)
+            {
+                this.intrebariTableAdapter.FillU(flashLearnDBDataSet.Intrebari, CUid);
+                DataTable intrebari = flashLearnDBDataSet.Intrebari;
+                for (int i = 0; i < intrebari.Rows.Count; i++)
+                {
+                    comboBox1.Items.Add(intrebari.Rows[i]["intrebare"]);
+                    ids.Add(int.Parse(intrebari.Rows[i]["id"].ToString()));
+                }
+                tabControl1.SelectedIndex = 5;
+            }
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CUid != -1)
+            {
+                this.intrebariTableAdapter.Fill(flashLearnDBDataSet.Intrebari);
+                CUid = -1;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                tabControl1.SelectedIndex = 0;
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex >= 0)
+            {
+                System.Console.WriteLine(ids[comboBox1.SelectedIndex]);
+                this.intrebariTableAdapter.FillByQid(flashLearnDBDataSet.Intrebari, ids[comboBox1.SelectedIndex]);
+                DataTable stats = flashLearnDBDataSet.Intrebari;
+                label21.Text = (5-int.Parse(stats.Rows[0]["lvl"].ToString())+1).ToString();
+                label22.Text = stats.Rows[0]["Aparitii"].ToString();
+                label23.Text = stats.Rows[0]["Raspunsuri Greu"].ToString();
+                label24.Text = stats.Rows[0]["Raspunsuri Mediu"].ToString();
+                label25.Text = stats.Rows[0]["Raspunsuri Usor"].ToString();
+            }
+        }
+
+    
+   }
+}
       

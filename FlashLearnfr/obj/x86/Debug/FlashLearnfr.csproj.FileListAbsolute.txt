@@ -22,3 +22,15 @@ C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\Flash
 C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.csproj.GenerateResource.Cache
 C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\FlashLearnDB.mdf
 C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\FlashLearnDB_log.ldf
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\bin\Debug\FlashLearnfr.exe.config
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.exe
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.pdb
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\bin\Debug\FlashLearnDB.mdf
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\bin\Debug\FlashLearnDB_log.ldf
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\bin\Debug\FlashLearnfr.exe
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\bin\Debug\FlashLearnfr.pdb
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.csprojResolveAssemblyReference.cache
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Form1.resources
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Login.resources
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Properties.Resources.resources
+D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.csproj.GenerateResource.Cache
