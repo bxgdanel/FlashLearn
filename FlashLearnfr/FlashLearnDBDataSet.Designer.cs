@@ -331,6 +331,14 @@ namespace FlashLearnfr {
             
             private global::System.Data.DataColumn columnUId;
             
+            private global::System.Data.DataColumn columnAparitii;
+            
+            private global::System.Data.DataColumn columnRaspunsuri_greu;
+            
+            private global::System.Data.DataColumn columnRaspunsuri_mediu;
+            
+            private global::System.Data.DataColumn columnRaspunsuri_usor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public IntrebariDataTable() {
@@ -406,6 +414,38 @@ namespace FlashLearnfr {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AparitiiColumn {
+                get {
+                    return this.columnAparitii;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Raspunsuri_greuColumn {
+                get {
+                    return this.columnRaspunsuri_greu;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Raspunsuri_mediuColumn {
+                get {
+                    return this.columnRaspunsuri_mediu;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Raspunsuri_usorColumn {
+                get {
+                    return this.columnRaspunsuri_usor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -441,14 +481,18 @@ namespace FlashLearnfr {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public IntrebariRow AddIntrebariRow(int id, string Intrebare, string Raspuns, int lvl, UtilizatoriRow parentUtilizatoriRowByUtilizatori_Intrebari) {
+            public IntrebariRow AddIntrebariRow(int id, string Intrebare, string Raspuns, int lvl, UtilizatoriRow parentUtilizatoriRowByUtilizatori_Intrebari, int Aparitii, int Raspunsuri_greu, int Raspunsuri_mediu, int Raspunsuri_usor) {
                 IntrebariRow rowIntrebariRow = ((IntrebariRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         Intrebare,
                         Raspuns,
                         lvl,
-                        null};
+                        null,
+                        Aparitii,
+                        Raspunsuri_greu,
+                        Raspunsuri_mediu,
+                        Raspunsuri_usor};
                 if ((parentUtilizatoriRowByUtilizatori_Intrebari != null)) {
                     columnValuesArray[4] = parentUtilizatoriRowByUtilizatori_Intrebari[0];
                 }
@@ -486,6 +530,10 @@ namespace FlashLearnfr {
                 this.columnRaspuns = base.Columns["Raspuns"];
                 this.columnlvl = base.Columns["lvl"];
                 this.columnUId = base.Columns["UId"];
+                this.columnAparitii = base.Columns["Aparitii"];
+                this.columnRaspunsuri_greu = base.Columns["Raspunsuri greu"];
+                this.columnRaspunsuri_mediu = base.Columns["Raspunsuri mediu"];
+                this.columnRaspunsuri_usor = base.Columns["Raspunsuri usor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -501,6 +549,14 @@ namespace FlashLearnfr {
                 base.Columns.Add(this.columnlvl);
                 this.columnUId = new global::System.Data.DataColumn("UId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUId);
+                this.columnAparitii = new global::System.Data.DataColumn("Aparitii", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAparitii);
+                this.columnRaspunsuri_greu = new global::System.Data.DataColumn("Raspunsuri greu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRaspunsuri_greu);
+                this.columnRaspunsuri_mediu = new global::System.Data.DataColumn("Raspunsuri mediu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRaspunsuri_mediu);
+                this.columnRaspunsuri_usor = new global::System.Data.DataColumn("Raspunsuri usor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRaspunsuri_usor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -510,6 +566,11 @@ namespace FlashLearnfr {
                 this.columnRaspuns.AllowDBNull = false;
                 this.columnRaspuns.MaxLength = 2147483647;
                 this.columnlvl.AllowDBNull = false;
+                this.columnUId.AllowDBNull = false;
+                this.columnAparitii.AllowDBNull = false;
+                this.columnRaspunsuri_greu.AllowDBNull = false;
+                this.columnRaspunsuri_mediu.AllowDBNull = false;
+                this.columnRaspunsuri_usor.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -988,15 +1049,54 @@ namespace FlashLearnfr {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int UId {
                 get {
-                    try {
-                        return ((int)(this[this.tableIntrebari.UIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UId\' in table \'Intrebari\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableIntrebari.UIdColumn]));
                 }
                 set {
                     this[this.tableIntrebari.UIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Aparitii {
+                get {
+                    return ((int)(this[this.tableIntrebari.AparitiiColumn]));
+                }
+                set {
+                    this[this.tableIntrebari.AparitiiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Raspunsuri_greu {
+                get {
+                    return ((int)(this[this.tableIntrebari.Raspunsuri_greuColumn]));
+                }
+                set {
+                    this[this.tableIntrebari.Raspunsuri_greuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Raspunsuri_mediu {
+                get {
+                    return ((int)(this[this.tableIntrebari.Raspunsuri_mediuColumn]));
+                }
+                set {
+                    this[this.tableIntrebari.Raspunsuri_mediuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Raspunsuri_usor {
+                get {
+                    return ((int)(this[this.tableIntrebari.Raspunsuri_usorColumn]));
+                }
+                set {
+                    this[this.tableIntrebari.Raspunsuri_usorColumn] = value;
                 }
             }
             
@@ -1009,18 +1109,6 @@ namespace FlashLearnfr {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Utilizatori_Intrebari"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUIdNull() {
-                return this.IsNull(this.tableIntrebari.UIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUIdNull() {
-                this[this.tableIntrebari.UIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1281,17 +1369,25 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Raspuns", "Raspuns");
             tableMapping.ColumnMappings.Add("lvl", "lvl");
             tableMapping.ColumnMappings.Add("UId", "UId");
+            tableMapping.ColumnMappings.Add("Aparitii", "Aparitii");
+            tableMapping.ColumnMappings.Add("Raspunsuri greu", "Raspunsuri greu");
+            tableMapping.ColumnMappings.Add("Raspunsuri mediu", "Raspunsuri mediu");
+            tableMapping.ColumnMappings.Add("Raspunsuri usor", "Raspunsuri usor");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Intrebari] ([id], [Intrebare], [Raspuns], [lvl], [UId]) VALUES (@id," +
-                " @Intrebare, @Raspuns, @lvl, @UId)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Intrebari] ([Intrebare], [Raspuns], [lvl], [UId], [Aparitii], [Raspu" +
+                "nsuri greu], [Raspunsuri mediu], [Raspunsuri usor]) VALUES (@Intrebare, @Raspuns" +
+                ", @lvl, @UId, @Aparitii, @Raspunsuri_greu, @Raspunsuri_mediu, @Raspunsuri_usor)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrebare", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrebare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Raspuns", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Raspuns", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lvl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lvl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aparitii", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aparitii", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Raspunsuri_greu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Raspunsuri greu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Raspunsuri_mediu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Raspunsuri mediu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Raspunsuri_usor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Raspunsuri usor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1304,35 +1400,82 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[12];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, Intrebare, Raspuns, lvl, UId\r\nFROM            Intrebari";
+            this._commandCollection[0].CommandText = "SELECT        id, Intrebare, Raspuns, lvl, UId, Aparitii, [Raspunsuri greu], [Ras" +
+                "punsuri mediu], [Raspunsuri usor]\r\nFROM            Intrebari";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT DISTINCT lvl\r\nFROM            Intrebari\r\nWHERE        (UId = @uid)";
+            this._commandCollection[1].CommandText = "UPDATE       Intrebari\r\nSET                Aparitii = Aparitii + 1\r\nWHERE        " +
+                "(id = @id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@uid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Intrebare, Raspuns, UId, id, lvl\r\nFROM            Intrebari\r\nWHERE " +
-                "       (lvl = @lvl) AND (UId = @uid)";
+            this._commandCollection[2].CommandText = "SELECT DISTINCT lvl\r\nFROM            Intrebari\r\nWHERE        (UId = @uid)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lvl", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "lvl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@uid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        id, Intrebare, Raspuns, lvl, UId\r\nFROM            Intrebari\r\nWHERE " +
-                "       (UId = @uid)";
+            this._commandCollection[3].CommandText = "SELECT        TOP (1) Intrebare, Aparitii\r\nFROM            Intrebari\r\nWHERE      " +
+                "  (UId = @id)\r\nORDER BY Aparitii DESC";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@uid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE       Intrebari\r\nSET                lvl = @slvl\r\nWHERE        (id = @idq)";
+            this._commandCollection[4].CommandText = "SELECT        id, Intrebare, Raspuns, lvl, UId, Aparitii, [Raspunsuri greu], [Ras" +
+                "punsuri mediu], [Raspunsuri usor]\r\nFROM            Intrebari\r\nWHERE        (id =" +
+                " @id)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@slvl", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "lvl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idq", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT Aparitii, Intrebare, Raspuns, [Raspunsuri greu], [Raspunsuri mediu], [Rasp" +
+                "unsuri usor], UId, id, lvl FROM Intrebari WHERE (lvl = @lvl) AND (UId = @uid)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lvl", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "lvl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@uid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT Aparitii, Intrebare, Raspuns, [Raspunsuri greu], [Raspunsuri mediu], [Rasp" +
+                "unsuri usor], UId, id, lvl FROM Intrebari WHERE (UId = @uid)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@uid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "UPDATE       Intrebari\r\nSET                [Raspunsuri greu] = [Raspunsuri greu] " +
+                "+ 1\r\nWHERE        (id = @id)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "INSERT INTO Intrebari\r\n                         (Intrebare, Raspuns, lvl, UId)\r\nV" +
+                "ALUES        (@Intrebare,@Raspuns,@lvl,@UId)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrebare", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Intrebare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Raspuns", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Raspuns", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lvl", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "lvl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "UPDATE       Intrebari\r\nSET                [Raspunsuri mediu] = [Raspunsuri mediu" +
+                "] + 1\r\nWHERE        (id = @id)";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = "UPDATE       Intrebari\r\nSET                lvl = @slvl\r\nWHERE        (id = @idq)";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@slvl", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "lvl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idq", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[11].Connection = this.Connection;
+            this._commandCollection[11].CommandText = "UPDATE       Intrebari\r\nSET                [Raspunsuri usor] = [Raspunsuri usor] " +
+                "+ 1\r\nWHERE        (id = @id)";
+            this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1364,7 +1507,7 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBylvl(FlashLearnDBDataSet.IntrebariDataTable dataTable, int uid) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(uid));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1377,8 +1520,8 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual FlashLearnDBDataSet.IntrebariDataTable GetDataBy(int uid) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+        public virtual FlashLearnDBDataSet.IntrebariDataTable GetDataBy1(int uid) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(uid));
             FlashLearnDBDataSet.IntrebariDataTable dataTable = new FlashLearnDBDataSet.IntrebariDataTable();
             this.Adapter.Fill(dataTable);
@@ -1389,8 +1532,60 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByMaxAp(FlashLearnDBDataSet.IntrebariDataTable dataTable, int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FlashLearnDBDataSet.IntrebariDataTable GetDataBy9(int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            FlashLearnDBDataSet.IntrebariDataTable dataTable = new FlashLearnDBDataSet.IntrebariDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByQid(FlashLearnDBDataSet.IntrebariDataTable dataTable, int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FlashLearnDBDataSet.IntrebariDataTable GetDataBy8(int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            FlashLearnDBDataSet.IntrebariDataTable dataTable = new FlashLearnDBDataSet.IntrebariDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBySLvl(FlashLearnDBDataSet.IntrebariDataTable dataTable, int lvl, int uid) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(lvl));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(uid));
             if ((this.ClearBeforeFill == true)) {
@@ -1404,8 +1599,8 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual FlashLearnDBDataSet.IntrebariDataTable GetDataBy1(int lvl, int uid) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+        public virtual FlashLearnDBDataSet.IntrebariDataTable GetDataBy11(int lvl, int uid) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(lvl));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(uid));
             FlashLearnDBDataSet.IntrebariDataTable dataTable = new FlashLearnDBDataSet.IntrebariDataTable();
@@ -1418,7 +1613,7 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillU(FlashLearnDBDataSet.IntrebariDataTable dataTable, int uid) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(uid));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1432,7 +1627,7 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual FlashLearnDBDataSet.IntrebariDataTable GetDataBy3(int uid) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(uid));
             FlashLearnDBDataSet.IntrebariDataTable dataTable = new FlashLearnDBDataSet.IntrebariDataTable();
             this.Adapter.Fill(dataTable);
@@ -1472,27 +1667,25 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id, string Intrebare, string Raspuns, int lvl, global::System.Nullable<int> UId) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id));
+        public virtual int Insert(string Intrebare, string Raspuns, int lvl, int UId, int Aparitii, int Raspunsuri_greu, int Raspunsuri_mediu, int Raspunsuri_usor) {
             if ((Intrebare == null)) {
                 throw new global::System.ArgumentNullException("Intrebare");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Intrebare));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Intrebare));
             }
             if ((Raspuns == null)) {
                 throw new global::System.ArgumentNullException("Raspuns");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Raspuns));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Raspuns));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(lvl));
-            if ((UId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(UId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(lvl));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(UId));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Aparitii));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Raspunsuri_greu));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Raspunsuri_mediu));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Raspunsuri_usor));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1513,10 +1706,143 @@ namespace FlashLearnfr.FlashLearnDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Aparitii(int id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int GreuCnt(int id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            command.Parameters[0].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQ(string Intrebare, string Raspuns, int lvl, int UId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
+            if ((Intrebare == null)) {
+                throw new global::System.ArgumentNullException("Intrebare");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Intrebare));
+            }
+            if ((Raspuns == null)) {
+                throw new global::System.ArgumentNullException("Raspuns");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Raspuns));
+            }
+            command.Parameters[2].Value = ((int)(lvl));
+            command.Parameters[3].Value = ((int)(UId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int MediuCnt(int id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
+            command.Parameters[0].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateLvl(int slvl, int idq) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
             command.Parameters[0].Value = ((int)(slvl));
             command.Parameters[1].Value = ((int)(idq));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UsorCnt(int id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[11];
+            command.Parameters[0].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
