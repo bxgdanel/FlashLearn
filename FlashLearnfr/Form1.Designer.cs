@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.flashLearnDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.flashLearnDBDataSet1 = new FlashLearnfr.FlashLearnDBDataSet();
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.acasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,8 +40,6 @@
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.intrebariBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.utilizatoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.flashLearnDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.flashLearnDBDataSet1 = new FlashLearnfr.FlashLearnDBDataSet();
             this.flashLearnDBDataSet = new FlashLearnfr.FlashLearnDBDataSet();
             this.intrebariTableAdapter = new FlashLearnfr.FlashLearnDBDataSetTableAdapters.IntrebariTableAdapter();
             this.utilizatoriBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -50,6 +50,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -94,6 +95,12 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -108,19 +115,13 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intrebariBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilizatoriBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilizatoriBindingSource1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -147,6 +148,16 @@
             // 
             this.bindingSource1.DataMember = "Intrebari";
             this.bindingSource1.DataSource = this.flashLearnDBDataSetBindingSource;
+            // 
+            // flashLearnDBDataSetBindingSource
+            // 
+            this.flashLearnDBDataSetBindingSource.DataSource = this.flashLearnDBDataSet1;
+            this.flashLearnDBDataSetBindingSource.Position = 0;
+            // 
+            // flashLearnDBDataSet1
+            // 
+            this.flashLearnDBDataSet1.DataSetName = "FlashLearnDBDataSet";
+            this.flashLearnDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingSource2
             // 
@@ -195,16 +206,6 @@
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
-            // 
-            // flashLearnDBDataSetBindingSource
-            // 
-            this.flashLearnDBDataSetBindingSource.DataSource = this.flashLearnDBDataSet1;
-            this.flashLearnDBDataSetBindingSource.Position = 0;
-            // 
-            // flashLearnDBDataSet1
-            // 
-            this.flashLearnDBDataSet1.DataSetName = "FlashLearnDBDataSet";
-            this.flashLearnDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // flashLearnDBDataSet
             // 
@@ -280,6 +281,7 @@
             // panel6
             // 
             this.panel6.BackgroundImage = global::FlashLearnfr.Properties.Resources._2;
+            this.panel6.Controls.Add(this.label34);
             this.panel6.Controls.Add(this.button7);
             this.panel6.Controls.Add(this.button6);
             this.panel6.Controls.Add(this.label4);
@@ -294,6 +296,17 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(257, 199);
             this.panel6.TabIndex = 18;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(28, 150);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(162, 26);
+            this.label34.TabIndex = 18;
+            this.label34.Text = "Apasati din nou pe \"inregistrare\" \r\npentru a confirma";
+            this.label34.Visible = false;
             // 
             // button7
             // 
@@ -352,6 +365,7 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 11;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label5
             // 
@@ -370,6 +384,7 @@
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 13;
             this.textBox3.Visible = false;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label6
             // 
@@ -800,6 +815,66 @@
             this.splitContainer1.SplitterDistance = 365;
             this.splitContainer1.TabIndex = 7;
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.Location = new System.Drawing.Point(108, 113);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(13, 13);
+            this.label33.TabIndex = 7;
+            this.label33.Text = "0";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(6, 113);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(96, 13);
+            this.label32.TabIndex = 6;
+            this.label32.Text = "Nr intrebari usoare:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.ForeColor = System.Drawing.Color.Black;
+            this.label31.Location = new System.Drawing.Point(99, 89);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(13, 13);
+            this.label31.TabIndex = 5;
+            this.label31.Text = "0";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Black;
+            this.label30.Location = new System.Drawing.Point(6, 89);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(88, 13);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "Nr intrebari medii:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(99, 64);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(13, 13);
+            this.label29.TabIndex = 3;
+            this.label29.Text = "0";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(6, 64);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(87, 13);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "Nr intrebari grele:";
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -930,66 +1005,6 @@
             this.label17.TabIndex = 3;
             this.label17.Text = "Nr. Aparitii:";
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(6, 64);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(87, 13);
-            this.label28.TabIndex = 2;
-            this.label28.Text = "Nr intrebari grele:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(99, 64);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(13, 13);
-            this.label29.TabIndex = 3;
-            this.label29.Text = "0";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(6, 89);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(88, 13);
-            this.label30.TabIndex = 4;
-            this.label30.Text = "Nr intrebari medii:";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(99, 89);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(13, 13);
-            this.label31.TabIndex = 5;
-            this.label31.Text = "0";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(6, 113);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(96, 13);
-            this.label32.TabIndex = 6;
-            this.label32.Text = "Nr intrebari usoare:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(108, 113);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(13, 13);
-            this.label33.TabIndex = 7;
-            this.label33.Text = "0";
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1002,13 +1017,13 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intrebariBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilizatoriBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flashLearnDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilizatoriBindingSource1)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -1125,6 +1140,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label34;
      
 
 

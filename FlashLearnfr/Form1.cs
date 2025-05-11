@@ -17,7 +17,7 @@ namespace FlashLearnfr
         List<float> p = new List<float>();
         List<int> ids = new List<int>();
         Random_Ponderat WRandom;
-        int CQid,CUid=-1;
+        int CQid,CUid=-1,CQlvl;
         private void NDist(int n) {
             List<float> brut = new List<float>();
             for (int i = 0; i < n; i++)
@@ -68,6 +68,7 @@ namespace FlashLearnfr
                     label2.Text = qu.Rows[idx]["Raspuns"].ToString();
                     string idq = qu.Rows[idx]["id"].ToString();
                     CQid = int.Parse(idq);
+                    CQlvl = int.Parse(qu.Rows[idx]["lvl"].ToString());
                     this.intrebariTableAdapter.Aparitii(CQid);
                 }
                 else RInit();
@@ -121,7 +122,10 @@ namespace FlashLearnfr
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.intrebariTableAdapter.UpdateLvl(5, CQid);
+            if(CQlvl==4)
+                this.intrebariTableAdapter.UpdateLvl(5, CQid);
+            else
+                this.intrebariTableAdapter.UpdateLvl(4, CQid);
             this.intrebariTableAdapter.UsorCnt(CQid);
             selectQ();
             tabControl1.SelectedIndex = 2;
@@ -129,7 +133,10 @@ namespace FlashLearnfr
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.intrebariTableAdapter.UpdateLvl(1, CQid);
+            if (CQlvl == 2)
+                this.intrebariTableAdapter.UpdateLvl(1, CQid);
+            else
+                this.intrebariTableAdapter.UpdateLvl(2, CQid);
             this.intrebariTableAdapter.GreuCnt(CQid);
             selectQ();
             tabControl1.SelectedIndex = 2;
@@ -180,6 +187,7 @@ namespace FlashLearnfr
                             {
                                 label3.Visible = false;
                                 textBox3.Visible = false;
+                                label34.Visible = false;
                                 label4.ForeColor = Color.Green;
                                 label4.Text = "Succes";
                                 utilizatoriTableAdapter.InsertQuery(textBox1.Text.ToString(), textBox2.Text.ToString());
@@ -274,6 +282,9 @@ namespace FlashLearnfr
                 if(apm.Rows.Count!=0)
                 label27.Text = apm.Rows[0]["Intrebare"] + " " + apm.Rows[0]["Aparitii"];
             }
+            label29.Text = this.intrebariTableAdapter.CntGreu(CUid).ToString();
+            label31.Text = this.intrebariTableAdapter.CntMediu(CUid).ToString();
+            label33.Text = this.intrebariTableAdapter.CntUsor(CUid).ToString();
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -301,6 +312,29 @@ namespace FlashLearnfr
                 label24.Text = stats.Rows[0]["Raspunsuri Mediu"].ToString();
                 label25.Text = stats.Rows[0]["Raspunsuri Usor"].ToString();
             }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (label34.Visible == false)
+            {
+                if (textBox3.Text.Equals(textBox2.Text))
+                    label34.Visible = true;
+            }
+            else
+                label34.Visible = false;
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (label34.Visible == false)
+            {
+                if (textBox3.Text.Equals(textBox2.Text))
+                    label34.Visible = true;
+            }
+            else
+                label34.Visible = false;
         }
 
     
