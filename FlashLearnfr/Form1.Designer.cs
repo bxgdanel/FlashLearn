@@ -277,6 +277,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(698, 325);
             this.panel1.TabIndex = 18;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel6
             // 
@@ -407,7 +408,6 @@
             this.tabPage1.Size = new System.Drawing.Size(717, 364);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // panel2
             // 
@@ -602,7 +602,7 @@
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.textBox4);
             this.panel5.Controls.Add(this.textBox5);
-            this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(50)))), ((int)(((byte)(28)))));
+            this.panel5.ForeColor = System.Drawing.Color.Black;
             this.panel5.Location = new System.Drawing.Point(3, 23);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(713, 341);
@@ -680,6 +680,7 @@
             this.radioButton4.TabIndex = 9;
             this.radioButton4.TabStop = true;
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -778,6 +779,7 @@
             // 
             // splitContainer1
             // 
+            this.splitContainer1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.splitContainer1.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer1.Location = new System.Drawing.Point(6, 26);
             this.splitContainer1.Name = "splitContainer1";

@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient; 
+using System.IO; 
 
 namespace FlashLearnfr
 {
@@ -25,11 +27,8 @@ namespace FlashLearnfr
             float SumBrut = brut.Sum();
             foreach(float a in brut)
                 p.Add(a/SumBrut*100);
-
         }
-        private bool check() {
-            return true;
-        }
+        
         private void RInit() {
             this.intrebariTableAdapter.FillU(this.flashLearnDBDataSet.Intrebari, CUid);
             if ( this.intrebariTableAdapter.FillU(this.flashLearnDBDataSet.Intrebari,CUid) !=0)
@@ -37,7 +36,6 @@ namespace FlashLearnfr
                 this.intrebariTableAdapter.FillBylvl(this.flashLearnDBDataSet.Intrebari, CUid);
                 DataTable dt = flashLearnDBDataSet.Intrebari;
                 int n = dt.Rows.Count;
-                System.Console.WriteLine("n:"+n);
                 for (int i = 0; i < n; i++)
                 {
                     string lvl = dt.Rows[i]["lvl"].ToString();
@@ -46,9 +44,8 @@ namespace FlashLearnfr
                 NDist(n);
             }
         }
-        private void selectQ() {
 
-            System.Console.WriteLine("user id:"+CUid);
+        private void selectQ() {
             this.intrebariTableAdapter.FillU(this.flashLearnDBDataSet.Intrebari, CUid);
             if (this.intrebariTableAdapter.FillU(this.flashLearnDBDataSet.Intrebari, CUid) != 0)
             {
@@ -80,24 +77,46 @@ namespace FlashLearnfr
             }
             
         }
-        public Form1()
-        {
-            InitializeComponent();
-            this.BackgroundImage = Image.FromFile("C:/Users/lucab/Documents/(M-)ATESTAT/FlashLearn/FlashLearnfr/Resources/11.png");
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            menuStrip1.Renderer = new TranslucentToolStripRenderer(this);
-            menuStrip1.BackColor = Color.Transparent;
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            flashLearnDBDataSet.EnforceConstraints = false;
-            // TODO: This line of code loads data into the 'flashLearnDBDataSet.Utilizatori' table. You can move, or remove it, as needed.
-            this.utilizatoriTableAdapter.Fill(this.flashLearnDBDataSet.Utilizatori);
-            this.intrebariTableAdapter.Fill(this.flashLearnDBDataSet.Intrebari);
-            RInit();
-            WRandom = new Random_Ponderat(v, p);
 
         
+        public Form1()
+        {
+            try
+            {
+                AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
+                InitializeComponent();
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+                menuStrip1.Renderer = new TranslucentToolStripRenderer(this);
+                menuStrip1.BackColor = Color.Transparent;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare: " + ex.Message);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FlashLearnDB.mdf");
+                string connectionString = string.Format(@"
+                Data Source=(LocalDB)\MSSQLLocalDB;
+                AttachDbFilename='{0}';
+                Integrated Security=True;
+                Connect Timeout=30;",
+                dbPath);
+                flashLearnDBDataSet.EnforceConstraints = false;
+                this.utilizatoriTableAdapter.Fill(this.flashLearnDBDataSet.Utilizatori);
+                this.intrebariTableAdapter.Fill(this.flashLearnDBDataSet.Intrebari);
+                RInit();
+                WRandom = new Random_Ponderat(v, p);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Eroare: " + ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -216,11 +235,6 @@ namespace FlashLearnfr
                     label4.Text = "Username-ul nu poate fi null";
                 }
             }
-            }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -237,7 +251,7 @@ namespace FlashLearnfr
             levels.Add(radioButton5);
             for (int i = 0; i < levels.Count; i++)
                 if (levels[i].Checked)
-                    lvl = 5-i+1;
+                    lvl = 5-i;
             if (Raspuns != "" && Intrebare != "")
             {
                 label15.ForeColor = Color.Green;
@@ -335,6 +349,16 @@ namespace FlashLearnfr
             }
             else
                 label34.Visible = false;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
     

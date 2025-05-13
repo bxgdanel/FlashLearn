@@ -18,7 +18,6 @@ namespace FlashLearnfr
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool ok = false;
             DataTable user = flashLearnDBDataSet.Utilizatori;
         }
 

@@ -34,3 +34,11 @@ D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\Flash
 D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Login.resources
 D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.Properties.Resources.resources
 D:\users\Luca Bogdan\FlashLearn\FlashLearn-main\FlashLearnfr\obj\x86\Debug\FlashLearnfr.csproj.GenerateResource.Cache
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\Resources\titlu2.png
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\Resources\titlu1.png
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\Resources\2.png
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\Resources\11.png
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\FlashLearnfr.exe.manifest
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\bin\Debug\FlashLearnfr.application
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.exe.manifest
+C:\Users\lucab\Documents\(M-)ATESTAT\FlashLearn\FlashLearnfr\obj\x86\Debug\FlashLearnfr.application
